@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import HeaderVinto from './HeaderVinto'
 import PostContainer from './PostContainer'
 import 'carbon-components/css/carbon-components.min.css';
@@ -38,6 +39,7 @@ class App extends Component {
     return (
       <div className="App">
         <HeaderVinto />
+        {/* <Route path='/may' render={() => <May />} /> */}
         <br />
         <br />
         <PostContainer users={this.state.users} posts={this.state.posts} addPost={this.addPost} />

@@ -1,7 +1,7 @@
 
 
 @import '@carbon/colors/scss/colors';
-// @import '@carbon/layout/scss/spacing';
+@import '@carbon/layout/scss/spacing';
 @import '@carbon/type/scss/type';
 
 
@@ -78,6 +78,22 @@
   }
 }
 
-.preview-card {
-  // padding-bottom: $carbon--spacing-06;
+.recently-saved {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-transform: uppercase;
+  padding-left: 2.4rem;
+  font-family: "IBM Plex Sans VF";
+
 }
+
+.inside {
+  padding-bottom: 1.5rem;
+}
+
+.add-post-form {
+  padding-left: 3rem;
+  padding-bottom: 1rem;
+}
+

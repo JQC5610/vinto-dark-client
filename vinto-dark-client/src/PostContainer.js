@@ -16,9 +16,12 @@ class PostContainer extends Component {
                 <div className="add-post-form">
                     <PostForm users={this.props.users} addPost={this.props.addPost}/>
                 </div>
+                <div className="recently-saved">
+                    Recently Saved
+                </div>
                 <br/>
-                <div class="bx--grid">
-                    <div class="bx--row">
+                <div className="bx--grid">
+                    <div className="bx--row">
                         {links}
                     </div>
                 </div>
