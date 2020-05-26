@@ -5,6 +5,13 @@
 @import '@carbon/type/scss/type';
 
 
+.App {
+  background-color: #000000;
+  color: #FFFFFF;
+
+}
+
+
 .page-header {
   font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   font-size: 36px; font-style: normal; 
@@ -45,6 +52,21 @@
   text-align: center;
 }
 
+.HeroMay {
+  font-family: "IBM Plex Sans VF";
+  background: url('../src/images/EYWEOCmWoAAOcnV.png');
+  height: 920px;
+  background-size: cover;
+  background-position: center;
+}
+
+.HeroGroupMay {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 150px 50px;
+  text-align: center;
+}
+
 .Hero h1 {
   margin: 0;
   color: #ffffff;
@@ -59,6 +81,28 @@
 }
 
 .Hero p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 30px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  animation: HeroAnimation 7s 0.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+}
+
+.HeroMay h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 60px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: HeroAnimation;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.HeroMay p {
   color: rgba(255, 255, 255, 0.8);
   font-size: 30px;
   line-height: 1.5;
@@ -93,7 +137,62 @@
 }
 
 .add-post-form {
-  padding-left: 3rem;
+  padding-left: 2.4rem;
   padding-bottom: 1rem;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  padding: 30px 30px 10px 10px;
+}
+
+.post {
+  // display: grid;
+  // grid-template-columns: 1fr 9fr;
+  // grid-gap: 5px;
+  display: flex;
+  flex-direction: column;
+  min-height: 145px;
+  width: 50%;
+  padding: 20px;
+  border:  rgb(238, 238, 238);
+  // border-style: outset;
+  // border-radius: 10px;
+  margin-bottom: 10px;
+  box-sizing: inherit;
+  font-weight: 400;
+  font-family: "TT Norms", Georgia, "Times New Roman", sans-serif;
+  color:  #000000;
+  background-color: #ffffff;
+}
+
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.title-area {
+  padding-bottom: 10px;
+}
+
+.meta-area{
+  padding-bottom: 10px;
+}
+
+.microlink {
+  border:  #000000;
+}
+
+.search-bar {
+  width: 80%;
+  margin-left: 10%;
+  color: #161616;
+}
+
+
+
+
 

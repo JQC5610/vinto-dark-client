@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import Home from './Home'
 import HeaderVinto from './HeaderVinto'
-import PostContainer from './PostContainer'
+import May from './May'
 import 'carbon-components/css/carbon-components.min.css';
 import './App.scss';
 
@@ -12,7 +13,8 @@ class App extends Component {
 
   state = {
     users: [],
-    posts: []
+    posts: [],
+    searchType: ''
   }
 
   componentDidMount(){
@@ -34,17 +36,24 @@ class App extends Component {
     this.setState({ posts: [...this.state.posts, post] })
   }
 
+  handleSearchChange = event => {
+    this.setState({ searchType: event.target.value})
+}
+
   render(){
+    const searchedType = this.state.posts.filter(item => item.content.toLowerCase().includes(this.state.searchType.toLowerCase()))
     console.log(this.state)
     return (
       <div className="App">
-        <HeaderVinto />
-        {/* <Route path='/may' render={() => <May />} /> */}
-        <br />
-        <br />
-        <PostContainer users={this.state.users} posts={this.state.posts} addPost={this.addPost} />
-        
-      </div>
+          <HeaderVinto />
+        <Switch>
+          <Route path='/may' render={() => <May posts={searchedType} onChange={this.handleSearchChange} />} />
+          <Route path='/' render={() => <Home users={this.state.users} posts={this.state.posts} addPost={this.addPost}/>} />
+          <br />
+          <br />
+          
+        </Switch>
+      </div>    
     );
   }
 }
