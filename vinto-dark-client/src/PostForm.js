@@ -26,6 +26,7 @@ class PostForm extends Component {
     getInitialState = () => ({ title: '', content: '', url: '', userId: '' })
 
     handleIdChange = (event) => {
+        console.log(event.target)
         const key = event.target.name
         const value = event.target.value
         this.setState({ [key] : parseInt(value) })
@@ -52,7 +53,7 @@ class PostForm extends Component {
                 "title": this.state.title,
                 "content": this.state.content,
                 "url": this.state.url,
-                "user_id": 1
+                "user_id": this.state.userId
             })
         })
         .then(resp => resp.json())
@@ -143,6 +144,8 @@ class PostForm extends Component {
                         invalidText=""
                         labelText="User"
                         light={false}
+                        name="userId"
+                        onChange={this.handleIdChange}
                     >
                         {this.props.users.map(user => 
                             <SelectItem
@@ -151,9 +154,9 @@ class PostForm extends Component {
                                 disabled={false}
                                 hidden={false}
                                 text={user.name}
-                                name="userId"
+                                // name="userId"
                                 value={user.id}
-                                onClick={this.handleIdChange}
+                                // onChange={this.handleIdChange}
                             />    
                         )}
                     </Select>

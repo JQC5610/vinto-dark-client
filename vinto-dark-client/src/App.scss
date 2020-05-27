@@ -111,6 +111,20 @@
   opacity: 0;
 }
 
+.Hero .Logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 3rem;
+  margin: 100px 0;
+  justify-items: center;
+}
+
+@media (max-width: 640px) {
+  .Hero .Logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @keyframes HeroAnimation {
   0% {
     opacity: 0;
@@ -191,6 +205,11 @@
   margin-left: 10%;
   color: #161616;
 }
+
+.recently-saved {
+  width: 50%;
+}
+
 
 
 

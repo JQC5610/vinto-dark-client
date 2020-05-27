@@ -1,5 +1,7 @@
 import React, {Fragment} from 'react';
-import Microlink from '@microlink/react'
+// import Microlink from '@microlink/react'
+import { ReactTinyLink } from 'react-tiny-link'
+
 // import moment from 'moment';
 
 const Post = (props) => {
@@ -17,7 +19,14 @@ const Post = (props) => {
                 </span>
                 </div>
                 <div className="preview-area">
-                    <Microlink className="microlink" url={props.post.url} />
+                <ReactTinyLink
+                    className="microlink"
+                    cardSize="small"
+                    showGraphic={true}
+                    maxLine={2}
+                    minLine={1}
+                    url={props.post.url}
+                />
                 </div>
                 <div className="link-area" />
             </div>
